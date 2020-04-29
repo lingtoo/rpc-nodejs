@@ -1,0 +1,26 @@
+{
+  "name": "indu",
+  "version": "1.0.0",
+  "description": "a rpc service of nodejs. base on tars and egg-core.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rpc",
+    "nodejs",
+    "tars",
+    "egg-core"
+  ],
+  "author": "ivaga",
+  "license": "ISC",
+  "dependencies": {
+    "@tars/logs": "^2.1.1",
+    "@tars/rpc": "^2.0.11",
+    "egg-core": "^4.17.4",
+    "egg-logger": "^2.4.2",
+    "egg-mysql": "^3.0.0",
+    "egg-redis": "^2.4.0",
+    "lodash": "^4.17.15"
+  }
+}

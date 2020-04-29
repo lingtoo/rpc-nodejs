@@ -1,0 +1,22 @@
+module Api
+{
+
+  struct User 
+  {
+    0 require int id=0;
+    1 require string userName ="";
+    2 optional string corp="";
+  };
+
+  struct Search {
+    0 optional string userName="";
+  };
+
+  interface Service
+  {
+      string getName(int id);
+      map<string,User> findMapOfUser(string name);
+      User getUserById(int id);
+      vector<User> findUsers(Search s);
+  };
+}; 
