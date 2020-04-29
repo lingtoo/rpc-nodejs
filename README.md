@@ -102,6 +102,7 @@ node ./client.js
 *ps：此DEMO要完全运行起，需要再配置下自己的mysql及redis连接信息,在`config/config.default.js`中; 同时导入testdata/hisdata.sql*
 
 - 生产环境
+
 上传打包好的文件即可，由tars平台会调用index.js启动
 
 
