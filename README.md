@@ -99,6 +99,8 @@ cd client
 node ./client.js
 ```
 
+*ps：此DEMO要完全运行起，需要再配置下自己的mysql及redis连接信息,在`config/config.default.js`中; 同时导入testdata/hisdata.sql*
+
 - 生产环境
 上传打包好的文件即可，由tars平台会调用index.js启动
 
@@ -106,7 +108,8 @@ node ./client.js
 # Tar生成的实现类的扩展
 在通过tars2node生成的实现类基础上，扩展其调用业务类的能力，改造如下
 
-打开 `$/tar/ApiImp.js`
+打开 `tar` 平台工具生成的实现类 `$/tar/ApiImp.js`
+
 引入Util扩展函数
 ```
 let Util = require('../boot/util')
@@ -138,7 +141,7 @@ Api.ServiceImp.prototype.getUserById = async function (current, id) {
 
 
 # 一点不完美的地方
-在扩展tar生成的实现类的过程中，由于原源码是通过 `HeroServer.js` 来实例化的， 此类源码需要做点小小改动。
+在扩展tar生成的实现类的过程中，由于原源码的实现类是通过 `HeroServer.js` 来实例化的， 此JS源码需要做点小小改动。
 
 定位到`node_modules/@tars/rpc/core/server/HeroServer.js ` 类，改写第 `117` 行：
 ```
@@ -149,7 +152,7 @@ Api.ServiceImp.prototype.getUserById = async function (current, id) {
 
 
 # 写在最后
-本脚手架的诞生，是利用业余时间研究了`egg-core.js` 及 `tars.js`源码，对`egg-core`做了再次的定制与封装，并结合平时实际开发所需整合而成，前后断断续续花了一个多星期吧。
+本脚手架的诞生，是自己利用业余时间研究了`egg-core.js` 及 `tars.js`源码，对`egg-core`做了再次的定制与封装，并结合平时实际开发所需整合而成，前后断断续续花了一个多星期吧。
 
 有兴趣的或有需求的小伙伴，可在此基础上再次扩展。
 
