@@ -2,7 +2,7 @@
 const Service = require('../service/base')
 function getExtImpl (fun) {
   if(typeof fun !== 'function'){
-    throw("fun is not function!")
+    throw new Error("fun is not function!")
   }
   let ProtoConsturctor = fun.prototype.constructor
   class ServiceImp extends Service {
